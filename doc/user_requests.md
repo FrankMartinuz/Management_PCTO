@@ -14,6 +14,7 @@
  - Orari delle aziende
  - Posti vacanti
  - (valutazione dagli anni precedenti)
+ - Sito Internet
 
 
 - Associare l'azienda giusta al ragazzo, quindi definire i campi di "filtro":
