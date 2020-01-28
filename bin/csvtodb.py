@@ -16,14 +16,19 @@ def createQuery(header, attr):
         else:
             query += ")"
 
-    query += "\nVALUES ("
-    for val in range(len(attr)-1):
-        print(val)
+    query += "VALUES ("
+    for val in range(len(attr)):
         if val == 5 or val == 9:
-            query += attr[val]
+            try:
+                test = attr[val][0]
+                query += attr[val]
+            except:
+                query += "0"
         elif val == 10:
             if attr[val] != "":
                 query += "TO_DATE(\'" + attr[val] + "\', \'DD/MM/YYYY\')"
+            else:
+                query += "null"
 
         else:
             if attr[val] == "":
@@ -54,6 +59,7 @@ if __name__ == "__main__":
     header = []
     attributes = [] * 14
     row_number = 0
+    err = open("error.txt", "w")
     for row in file_azienda:
         if row_number == 0:
             header = row.split(";")
@@ -63,12 +69,16 @@ if __name__ == "__main__":
             attributes = row.split(";")
             attributes[len(attributes) - 1] = attributes[len(attributes) - 1].replace("\n", "")
             query = createQuery(header, attributes)
-            print(query)
-            cursor.execute(query)
+
+            try:
+                cursor.execute(query)
+            except Exception as error:
+                if not (error.__str__() == "(1370, \"execute command denied to user 'V1h7DQxhnB'@'%' for routine 'V1h7DQxhnB.TO_DATE'\")"):
+                    err.write("\nQuery: " + str(query) + "  ERRORE: " + str(error))
 
         row_number += 1
 
-
+    err.close()
     file_azienda.close()
     db.commit()
     db.close()
