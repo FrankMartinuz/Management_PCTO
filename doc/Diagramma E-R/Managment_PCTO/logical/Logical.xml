@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="7C31191A-56E4-A694-B158-E392B621995B" mainViewID="191F4AD4-BA39-6115-CD13-C758003A00B5">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 08:25:19 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

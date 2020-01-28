@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Managment_PCTO" id="CA8EE1E3-7D08-7AE1-8976-22AC6FE1213B" version="3.5">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 08:25:19 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>CA8EE1E3-7D08-7AE1-8976-22AC6FE1213B</designId>
+</OSDM_Design>

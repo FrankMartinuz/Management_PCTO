@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="3EBC5301-2252-86FE-FF8C-46E497839F19">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 08:25:19 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

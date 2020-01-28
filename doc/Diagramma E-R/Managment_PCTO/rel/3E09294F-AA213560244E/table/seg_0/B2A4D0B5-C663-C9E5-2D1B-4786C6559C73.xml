@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B2A4D0B5-C663-C9E5-2D1B-4786C6559C73" name="Esperienze">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:00:42 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<abbreviation>Exp</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Exp" id="DBB59503-F199-E34E-2230-AE763CA0A0C7">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:19:12 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1672BA4-FD01-649F-CF0C-A1EE87216746" referredColumn="A2BFEC2D-F626-5326-D997-A17B679B075E"/>
+</associations>
+</Column>
+<Column name="ID_azienda" id="0A4479D7-02FD-F0BD-D286-EC024E1D9564">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 09:38:40 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<dependOnForeignKeyID>F1672BA4-FD01-649F-CF0C-A1EE87216746</dependOnForeignKeyID>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+<Column name="Classe_studente" id="ADC81D79-8EC9-190A-D961-40B0049E17FE">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:19:12 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>4 CHAR</dataTypeSize>
+<ownDataTypeParameters>4 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Codice_mansione" id="FD3F6681-404A-45F8-EE15-5D36046DA558">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:30:01 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>8 CHAR</dataTypeSize>
+<ownDataTypeParameters>8 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Mansione" id="4E3DECA3-22DC-D76D-213B-B992600938AC">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:28:10 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descrizione_esperienza" id="823E4A53-1D41-038A-FF95-79D88D5EFC25">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:19:12 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A3CA8037-CF78-A11C-B90F-865CC7D05F45" name="Esperienze_PK">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:19:12 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DBB59503-F199-E34E-2230-AE763CA0A0C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="80083AF8-635A-390A-D592-4453C1DEA2F5" name="Esperienze_Aziende_FK">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 08:31:41 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DBB59503-F199-E34E-2230-AE763CA0A0C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
