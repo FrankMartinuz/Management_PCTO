@@ -1,8 +1,6 @@
-DROP TABLE Esperienze;
-DROP TABLE Aziende;
 CREATE TABLE Aziende
     (
-     ID INTEGER NOT NULL ,
+     ID INTEGER NOT NULL AUTO_INCREMENT,
      Tipologia VARCHAR (16) NOT NULL ,
      Ragione_sociale VARCHAR (64) NOT NULL ,
      Comune VARCHAR (64) NOT NULL ,
