@@ -11,7 +11,7 @@ CREATE TABLE Aziende
      Email VARCHAR (32) ,
      Sito_Web VARCHAR (64) ,
      Dipendenti INTEGER ,
-     Data_convenzione DATETIME ,
+     Data_convenzione DATE ,
      Settore VARCHAR (32) NOT NULL ,
      Codice_ATECO VARCHAR (32) NOT NULL ,
      Descrizione TEXT,
