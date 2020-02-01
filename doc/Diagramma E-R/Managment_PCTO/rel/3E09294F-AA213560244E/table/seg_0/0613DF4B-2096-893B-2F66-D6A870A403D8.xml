@@ -1,0 +1,192 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0613DF4B-2096-893B-2F66-D6A870A403D8" name="Aziende">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:12:28 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<abbreviation>Azi</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="A2BFEC2D-F626-5326-D997-A17B679B075E">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:34:21 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipologia" id="BC72ADA5-15F2-1B20-9FC3-095A608F7079">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:34:21 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>16 CHAR</dataTypeSize>
+<ownDataTypeParameters>16 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ragione_sociale" id="B2A11985-C2A1-2DB4-2847-468A5786C9DB">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:34:21 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Comune" id="9A6FA587-0B05-C82A-AB4D-83F485C90769">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:51:52 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Provincia" id="F8F1174E-B3F4-942E-D872-5BF42C304167">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 07:09:53 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>2 CHAR</dataTypeSize>
+<ownDataTypeParameters>2 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Indirizzo" id="D2747206-19F2-DFC0-03D3-A66986208461">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:48:43 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CAP" id="14C012EF-0DD6-071E-6DF5-52B0C1A6C9A2">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 07:12:53 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="F7690547-570B-E97A-A284-E60A3F92206C">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:56:53 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="1E12E674-03E1-2451-3BC0-08A5C0689AAF">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 10:00:06 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sito_Web" id="D2535A63-EF80-A2AB-81B0-D23B1DCE3736">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 07:16:04 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dipendenti" id="58FAF4DE-4FAE-5A39-0BCB-DC5BE5331C14">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 09:28:32 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data_convenzione" id="370E4B13-83A0-5FDF-651A-079EC2D4A4E1">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 07:29:00 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Settore" id="9F0D147F-3CD7-1010-B4A8-7FFFBE134E2E">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 09:29:40 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Codice_ATECO" id="4002D6B7-01DB-167B-A44B-A805D06E50E9">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 07:19:47 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descrizione" id="EE5CD286-5EBB-7BEB-C161-EAEEAFD6BD05">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-25 07:26:05 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F27BF35-E090-9E0E-790D-BA467024AD56" name="Aziende_PK">
+<createdBy>libon</createdBy>
+<createdTime>2020-01-18 09:34:21 UTC</createdTime>
+<ownerDesignName>Managment_PCTO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2BFEC2D-F626-5326-D997-A17B679B075E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
