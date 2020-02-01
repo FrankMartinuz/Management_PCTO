@@ -17,27 +17,28 @@ def createQuery(header, attr):
             query += ")"
 
     query += "VALUES ("
-    for val in range(len(attr)):
-        if val == 5 or val == 9:
-            try:
-                test = attr[val][0]
-                query += attr[val]
-            except:
-                query += "0"
-        elif val == 10:
-            if attr[val] != "":
-                query += "TO_DATE(\'" + attr[val] + "\', \'DD/MM/YYYY\')"
-            else:
-                query += "null"
 
+    for el in range(len(attr)):
+
+        if el == 5 or el == 9:
+            v = attr[el]
+            if v == "" or v == "null":
+                v = "NULL"
+
+            query += f"{v}"
+
+        elif el == 10:
+            date = attr[10]
+            if date == "" or date == "null":
+                date = "NULL"
+                query += f"{date}"
+            else:
+                date = datetime.strptime(date, '%d-%m-%Y').strftime('%Y/%m/%d')
+                query += f"\"{date}\""
         else:
-            if attr[val] == "":
-                a = "Dato non presente"
-            else:
-                a = attr[val]
-            query += "\"" + a + "\""
+            query += f"\"{attr[el]}\""
 
-        if val != len(attr) - 1:
+        if el != len(attr) - 1:
             query += ","
         else:
             query += ")"
@@ -51,7 +52,10 @@ if __name__ == "__main__":
         print("Start")
 
     db = pymysql.connect("remotemysql.com", "V1h7DQxhnB", "k36A91EtFI", "V1h7DQxhnB")
+    # db = pymysql.connect("localhost", "root", "", "aziende")
     cursor = db.cursor()
+
+    cursor.execute("TRUNCATE Aziende")
 
     file_azienda = open("../doc/export_aziende_2020_01_20.csv", "r")
 
@@ -68,13 +72,12 @@ if __name__ == "__main__":
         else:
             attributes = row.split(";")
             attributes[len(attributes) - 1] = attributes[len(attributes) - 1].replace("\n", "")
-            query = createQuery(header, attributes)
+            result = createQuery(header, attributes)
 
             try:
-                cursor.execute(query)
+                cursor.execute(result)
             except Exception as error:
-                if not (error.__str__() == "(1370, \"execute command denied to user 'V1h7DQxhnB'@'%' for routine 'V1h7DQxhnB.TO_DATE'\")"):
-                    err.write("\nQuery: " + str(query) + "  ERRORE: " + str(error))
+                err.write("\nQuery: " + str(result) + "\nERRORE: " + str(error))
 
         row_number += 1
 
