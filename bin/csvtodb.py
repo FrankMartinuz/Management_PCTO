@@ -1,9 +1,10 @@
 # --IMPORT
 import pymysql
+from datetime import datetime
 
 # --VARIABILI
 
-boolD = True
+boolD = False
 
 
 # --FUNZIONI
