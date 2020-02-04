@@ -53,7 +53,7 @@ if __name__ == "__main__":
         print("Start")
 
     db = pymysql.connect("remotemysql.com", "V1h7DQxhnB", "k36A91EtFI", "V1h7DQxhnB")
-    # db = pymysql.connect("localhost", "root", "", "aziende")
+    #db = pymysql.connect("localhost", "root", "", "aziende")
     cursor = db.cursor()
 
     cursor.execute("TRUNCATE Aziende")
