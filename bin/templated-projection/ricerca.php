@@ -66,7 +66,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
     <!-- Research field -->
 
   </script>
-  <form method="POST" name="searchField" id = "form">
+  <form method="POST" name="searchField" id = "form" onsubmit="return false;">
     <div class="row uniform">
       <div class="9u 12u$(small)">
         <input type="text" name="query" id="query" onkeypress="sendRequest(event)" value="" />
