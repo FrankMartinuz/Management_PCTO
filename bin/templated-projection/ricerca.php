@@ -19,13 +19,12 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   var lastInput = 0;
 
   function sendRequest(event) {
-    let search = event.target.value + "%";
-    console.log(search);
+    let search = event.target.value + event.key;
     let category = document.getElementById("category").value;
 
     let req = new XMLHttpRequest();
-    let currentInput = Math.random();
 
+    let currentInput = Math.random();
     req.onreadystatechange = function() {
       if (lastInput == currentInput) {
         document.getElementById("resultTable").innerHTML = req.response;
@@ -69,7 +68,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   <form method="POST" name="searchField" id = "form" onsubmit="return false;">
     <div class="row uniform">
       <div class="9u 12u$(small)">
-        <input type="text" name="query" id="query" onkeypress="sendRequest(event)" value="" />
+        <input type="text" name="query" id="query" onkeypress="sendRequest(event)" value="" placeholder="Nome"/>
       </div>
       <div class="3u 12u$(small)">
         <div class="select-wrapper">
@@ -89,14 +88,6 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   </form>
   <div class="table-wrapper">
     <table class="alt" id="resultTable">
-      <!-- <?php
-      var_dump($_POST["query"], $_POST["category"]);
-      session_start();
-      $_SESSION["research"] = $_POST["query"];
-      $_SESSION["field"] = $_POST["category"];
-      include "code/query.php";
-
-      ?> -->
     </table>
   </div>
 </section>
