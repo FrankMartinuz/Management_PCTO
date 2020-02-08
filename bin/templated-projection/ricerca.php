@@ -26,8 +26,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
     let settore = "%" + document.getElementById("settore").value +"%";
 
     let req = new XMLHttpRequest();
-    let currentInput = Math.random();
 
+    let currentInput = Math.random();
     req.onreadystatechange = function() {
       if (lastInput == currentInput) {
         document.getElementById("resultTable").innerHTML = req.response;
@@ -92,14 +92,6 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   </form>
   <div class="table-wrapper">
     <table class="alt" id="resultTable">
-      <!-- <?php
-      var_dump($_POST["query"], $_POST["category"]);
-      session_start();
-      $_SESSION["research"] = $_POST["query"];
-      $_SESSION["field"] = $_POST["category"];
-      include "code/query.php";
-
-      ?> -->
     </table>
   </div>
 </section>

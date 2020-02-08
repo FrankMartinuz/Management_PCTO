@@ -3,26 +3,9 @@
 
 // Function
 
-function checkType(){
-  if (isset($_SESSION["user_type"])) {
-    if ($_SESSION["user_type"] == "Studente") {
-      return "S";
-    } else {
-      return "T";
-    }
-  } else {
-    return "S";
-  }
-}
-
 function createSelect(){
 
-  $user_type = checkType();
-  if ($user_type == "S") {
-    $attributes = "ID,Tipologia,Ragione_sociale,Comune,Provincia,Indirizzo,CAP,Sito_Web,Settore";
-  }else {
-    $attributes = "*";
-  }
+    $attributes = "ID,Ragione_sociale,Comune,Indirizzo,Settore";
 
   return $attributes;
 }
