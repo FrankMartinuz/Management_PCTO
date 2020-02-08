@@ -19,6 +19,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   var lastInput = 0;
 
   function sendRequest(event) {
+<<<<<<< HEAD
     let nome = document.getElementById("ragione_sociale").value;
     let comune = document.getElementById("comune").value;
     let indirizzo = document.getElementById("indirizzo").value;
@@ -41,6 +42,12 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
         break;
         
     }
+=======
+    let nome = "%" + document.getElementById("ragione_sociale").value +"%";
+    let comune = "%" + document.getElementById("comune").value +"%";
+    let indirizzo = "%" + document.getElementById("indirizzo").value +"%";
+    let settore = "%" + document.getElementById("settore").value +"%";
+>>>>>>> 79ace6d5d58bf7255b867b789bc7562ffe9f4ffe
 
     let req = new XMLHttpRequest();
 
@@ -91,19 +98,19 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
     <div class="row uniform">
       <div class="3u 12u$(small)" align="center">
         <h2>Nome</h2>
-        <input type="text" id="ragione_sociale" onkeypress="sendRequest(event)"/>
+        <input type="text" id="ragione_sociale" onkeypress="sendRequest(event)" placeholder="Nome"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Comune</h2>
-        <input type="text" id="comune" onkeypress="sendRequest(event)"/>
+        <input type="text" id="comune" onkeypress="sendRequest(event)" placeholder="Comune"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Indirizzo</h2>
-        <input type="text" id="indirizzo" onkeypress="sendRequest(event)"/>
+        <input type="text" id="indirizzo" onkeypress="sendRequest(event)" placeholder="Indirizzo"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Settore</h2>
-        <input type="text" id="settore" onkeypress="sendRequest(event)"/>
+        <input type="text" id="settore" onkeypress="sendRequest(event)" placeholder="Settore"/>
       </div>
     </div>
   </form>
