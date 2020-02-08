@@ -19,11 +19,28 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   var lastInput = 0;
 
   function sendRequest(event) {
-    console.log(search);
-    let nome = "%" + document.getElementById("ragione_sociale").value +"%";
-    let comune = "%" + document.getElementById("comune").value +"%";
-    let indirizzo = "%" + document.getElementById("indirizzo").value +"%";
-    let settore = "%" + document.getElementById("settore").value +"%";
+    let nome = document.getElementById("ragione_sociale").value;
+    let comune = document.getElementById("comune").value;
+    let indirizzo = document.getElementById("indirizzo").value;
+    let settore = document.getElementById("settore").value;
+
+    switch(event.target.id) {
+      case "ragione_sociale":
+        nome += event.key;
+      break;
+      case "comune":
+        comune += event.key;
+      break;
+      case "indirizzo":
+        indirizzo += event.key;
+        break;
+      case "settore":
+        settore += event.key;
+        break;
+      default:
+        break;
+        
+    }
 
     let req = new XMLHttpRequest();
 

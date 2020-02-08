@@ -21,10 +21,10 @@ function createQuery(){
   $settore = $_POST["settore"];
 
   $query = "SELECT ".$q_attr." FROM Aziende HAVING
-  Ragione_sociale LIKE \"".$rag_sociale."\" AND
-  Comune LIKE \"".$comune."\" AND
-  Indirizzo LIKE \"".$indirizzo."\" AND
-  Settore LIKE \"".$settore."\"";
+  Ragione_sociale LIKE \"%".$rag_sociale."%\" AND
+  Comune LIKE \"%".$comune."%\" AND
+  Indirizzo LIKE \"%".$indirizzo."%\" AND
+  Settore LIKE \"%".$settore."%\"";
   // $query = "SELECT ".$q_attr." FROM Aziende HAVING ".$field." LIKE \"%".$equals_to."%\"";
 
   return $query;
@@ -32,6 +32,7 @@ function createQuery(){
 
 function headerTabella($header){
 
+  $header = explode(",", $header);
   echo "<tr>";
   foreach ($header as $attribute) {
     echo "<td><b>$attribute</b></td>";
