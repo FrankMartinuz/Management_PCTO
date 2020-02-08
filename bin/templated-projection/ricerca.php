@@ -19,7 +19,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   var lastInput = 0;
 
   function sendRequest(event) {
-<<<<<<< HEAD
+
     let nome = document.getElementById("ragione_sociale").value;
     let comune = document.getElementById("comune").value;
     let indirizzo = document.getElementById("indirizzo").value;
@@ -40,14 +40,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
         break;
       default:
         break;
-        
+
     }
-=======
-    let nome = "%" + document.getElementById("ragione_sociale").value +"%";
-    let comune = "%" + document.getElementById("comune").value +"%";
-    let indirizzo = "%" + document.getElementById("indirizzo").value +"%";
-    let settore = "%" + document.getElementById("settore").value +"%";
->>>>>>> 79ace6d5d58bf7255b867b789bc7562ffe9f4ffe
 
     let req = new XMLHttpRequest();
 
