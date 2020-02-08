@@ -19,9 +19,11 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   var lastInput = 0;
 
   function sendRequest(event) {
-    let search = event.target.value + "%";
     console.log(search);
-    let category = document.getElementById("category").value;
+    let nome = "%" + document.getElementById("ragione_sociale").value +"%";
+    let comune = "%" + document.getElementById("comune").value +"%";
+    let indirizzo = "%" + document.getElementById("indirizzo").value +"%";
+    let settore = "%" + document.getElementById("settore").value +"%";
 
     let req = new XMLHttpRequest();
     let currentInput = Math.random();
@@ -32,8 +34,10 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
       }
     }
     let sendData = new FormData();
-    sendData.append("query", search);
-    sendData.append("category", category);
+    sendData.append("ragione_sociale", nome);
+    sendData.append("comune", comune);
+    sendData.append("indirizzo", indirizzo);
+    sendData.append("settore", settore);
 
     req.open('POST', './code/query.php', true);
     //let currentInput = Math.random();
@@ -68,22 +72,21 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   </script>
   <form method="POST" name="searchField" id = "form" onsubmit="return false;">
     <div class="row uniform">
-      <div class="9u 12u$(small)">
-        <input type="text" name="query" id="query" onkeypress="sendRequest(event)" value="" />
+      <div class="3u 12u$(small)" align="center">
+        <h2>Nome</h2>
+        <input type="text" id="ragione_sociale" onkeypress="sendRequest(event)"/>
       </div>
-      <div class="3u 12u$(small)">
-        <div class="select-wrapper">
-          <select name="category" id="category">
-            <option value="ID">- Category -</option>
-            <option value="Tipologia">Tipologia</option>
-            <option value="Ragione_sociale">Nome</option>
-            <option value="Comune">Comune</option>
-            <option value="Provincia">Provincia</option>
-            <option value="Indirizzo">Indirizzo</option>
-            <option value="CAP">CAP</option>
-            <option value="Settore">Settore</option>
-          </select>
-        </div>
+      <div class="3u 12u$(small)" align="center">
+        <h2>Comune</h2>
+        <input type="text" id="comune" onkeypress="sendRequest(event)"/>
+      </div>
+      <div class="3u 12u$(small)" align="center">
+        <h2>Indirizzo</h2>
+        <input type="text" id="indirizzo" onkeypress="sendRequest(event)"/>
+      </div>
+      <div class="3u 12u$(small)" align="center">
+        <h2>Settore</h2>
+        <input type="text" id="settore" onkeypress="sendRequest(event)"/>
       </div>
     </div>
   </form>
