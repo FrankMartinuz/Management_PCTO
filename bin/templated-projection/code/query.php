@@ -12,19 +12,26 @@ function createSelect(){
 
 function createQuery(){
   $q_attr = createSelect();
-  $field = $_POST["category"];
-  $equals_to = $_POST["query"];
-  $query = "SELECT ".$q_attr." FROM Aziende HAVING ".$field." LIKE \"%".$equals_to."%\"";
+  // $field = $_POST["category"];
+  // $equals_to = $_POST["query"];
+
+  $rag_sociale = $_POST["ragione_sociale"];
+  $comune = $_POST["comune"];
+  $indirizzo = $_POST["indirizzo"];
+  $settore = $_POST["settore"];
+
+  $query = "SELECT ".$q_attr." FROM Aziende HAVING
+  Ragione_sociale LIKE \"".$rag_sociale."\" AND
+  Comune LIKE \"".$comune."\" AND
+  Indirizzo LIKE \"".$indirizzo."\" AND
+  Settore LIKE \"".$settore."\"";
+  // $query = "SELECT ".$q_attr." FROM Aziende HAVING ".$field." LIKE \"%".$equals_to."%\"";
 
   return $query;
 }
 
 function headerTabella($header){
-  if ($header != "*"){
-    $header = explode(",",$header);
-  }else{
-    $header = ["ID","Tipologia","Ragione_sociale","Comune","Provincia","Indirizzo","CAP","Telefono","Email","Sito_Web","Dipendenti","Data_convenzione","Settore","Codice_ATECO","Descrizione"];
-  }
+
   echo "<tr>";
   foreach ($header as $attribute) {
     echo "<td><b>$attribute</b></td>";
