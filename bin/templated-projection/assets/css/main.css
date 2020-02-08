@@ -1584,7 +1584,7 @@
 
 /* Type */
 
-	body, input, select, textarea {
+	body, input, textarea {
 		color: #9a9a9a;
 		font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 		font-size: 14pt;
@@ -1969,7 +1969,6 @@
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
-	select,
 	textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -1980,6 +1979,22 @@
 		border: none;
 		border: solid 2px #8dcca9;
 		color: #fff;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		width: 100%;
+	}
+	select{
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+			background: #fff;
+		border-radius: 10px;
+		border: none;
+		border: solid 2px #8dcca9;
+		color: #6cc091;
 		display: block;
 		outline: 0;
 		padding: 0 1em;
@@ -2023,7 +2038,7 @@
 		}
 
 		.select-wrapper:before {
-			color: #fff;
+			color: #6cc091;
 			display: block;
 			height: 2.75em;
 			line-height: 2.75em;
@@ -2471,7 +2486,7 @@
 
 		table th {
 			color: #555;
-			font-size: 0.9em;
+			font-size: 0.6em;
 			font-weight: 600;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
