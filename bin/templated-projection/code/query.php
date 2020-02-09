@@ -1,20 +1,7 @@
 <?php
-
-
 // Function
-
-function createSelect(){
-
-    $attributes = "ID,Ragione_sociale,Comune,Indirizzo,Settore";
-
-  return $attributes;
-}
-
 function createQuery(){
-  $q_attr = createSelect();
-  // $field = $_POST["category"];
-  // $equals_to = $_POST["query"];
-
+  $q_attr = "ID,Ragione_sociale,Comune,Indirizzo,Settore";
   $rag_sociale = $_POST["ragione_sociale"];
   $comune = $_POST["comune"];
   $indirizzo = $_POST["indirizzo"];
@@ -33,18 +20,18 @@ function createQuery(){
 function headerTabella($header){
 
   $header = explode(",", $header);
-  echo "<tr>";
+  echo "<thead>";
   foreach ($header as $attribute) {
     echo "<td><b>$attribute</b></td>";
   }
-  echo "</tr>";
+  echo "</thead>";
 }
 
 include "connect.php";
 
 // Main
 
-$q_attr = createSelect();
+$q_attr = "ID,Ragione_sociale,Comune,Indirizzo,Settore";
 $query = createQuery();
 
 $stmt = $con->prepare( $query );
@@ -53,16 +40,17 @@ $nRighe = $stmt->rowCount();
 
 if ($nRighe > 0){
   headerTabella($q_attr);
+  echo "<tbody>";
   for ($i=0; $i < $nRighe; $i++) {
     $riga = $stmt->fetch(PDO::FETCH_NUM);
 
-    echo "<tr>";
+    echo "<tr onclick=newPage(".$riga[0].")>";
     foreach ($riga as $key => $value) {
       echo "<td>$value</td>";
     }
-
     echo "</tr>";
   }
+  echo "</tbody>";
 }else{
   echo "Nessun elemento corrispondente alla ricerca";
 }

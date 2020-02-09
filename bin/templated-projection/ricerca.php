@@ -17,7 +17,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   <script type="text/javascript">
     firstLoad();
     var lastInput = 0;
-    function sendRequest(event) {
+    function sendQuery(event) {
       let nome = document.getElementById("ragione_sociale").value;
       let comune = document.getElementById("comune").value;
       let indirizzo = document.getElementById("indirizzo").value;
@@ -70,6 +70,11 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
         document.getElementById("resultTable").innerHTML = req.response;
       }
     }
+
+    function newPage(ID){
+      document.cookie = ("IDazienda=" + ID);
+      location.href= "azienda.php";
+    }
 </script>
 
 <!-- Header -->
@@ -99,19 +104,19 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
     <div class="row uniform">
       <div class="3u 12u$(small)" align="center">
         <h2>Nome</h2>
-        <input type="text" id="ragione_sociale" onkeypress="sendRequest(event)" placeholder="Nome"/>
+        <input type="text" id="ragione_sociale" onkeypress="sendQuery(event)" placeholder="Nome"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Comune</h2>
-        <input type="text" id="comune" onkeypress="sendRequest(event)" placeholder="Comune"/>
+        <input type="text" id="comune" onkeypress="sendQuery(event)" placeholder="Comune"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Indirizzo</h2>
-        <input type="text" id="indirizzo" onkeypress="sendRequest(event)" placeholder="Indirizzo"/>
+        <input type="text" id="indirizzo" onkeypress="sendQuery(event)" placeholder="Indirizzo"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Settore</h2>
-        <input type="text" id="settore" onkeypress="sendRequest(event)" placeholder="Settore"/>
+        <input type="text" id="settore" onkeypress="sendQuery(event)" placeholder="Settore"/>
       </div>
     </div>
   </form>
