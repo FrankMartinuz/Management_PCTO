@@ -77,10 +77,10 @@ isset($_POST["password"])){
 
 </div>
     <div class="6u 12u$(xsmall)">
-      <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+      <input type="text" name="user" id="user" value="" placeholder="Utente" />
     </div>
     <div class="6u$ 12u$(xsmall)">
-      <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+      <input type="email" name="password" id="password" value="" placeholder="Password" />
     </div>
   </div>
 </div>
