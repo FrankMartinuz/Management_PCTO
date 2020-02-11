@@ -1,9 +1,10 @@
 <?php
-if (isset($_POST["utente"]) &&
+
+if (isset($_POST["user"]) &&
 isset($_POST["password"])){
 
   $password = $_REQUEST["password"];
-  $utente= $_REQUEST["utente"];
+  $utente= $_REQUEST["user"];
   // chiamo il webservice
   $url = "https://web.spaggiari.eu/services/ws/wsExtAuth.php?wsdl";
   $client = new SoapClient( $url );
@@ -11,23 +12,24 @@ isset($_POST["password"])){
     'cid' =>"VRIT0007",
     'login' =>$utente,
     'password' => $password));
-    /*il webservice restituisce 3 array, il primo [0] contiene eventuali errori,
-    il secondo [1] la descrizione degli errori ed
-    infine il terzo [2] se i primi due sono vuoti conterrà le informazioni dell'account (dati di esempio):
-    */
-    if(!empty($result[0])){
-      //no login - restituito codice errore (il dettaglio dell'errore è nel secondo array $result[1] ma noi lo ignoriamo per un più generico messaggio predefinito di joomla)
-      print("errore !!<br>");
-      print($result[1]);
+
+    echo "<pre>";
+    var_dump($result[2]);
+    echo "</pre>";
+
+    if (empty($result[0]) && empty($result[1])) {
+      session_start();
+      $result = (array) $result[2];
+      $_SESSION["user-type"] = $result["account_type"];
+
+    }else {
+
+      echo '<script type="text/javascript">';
+echo ' alert("DATI ERRATI")';  //not showing an alert box.
+echo '</script>';
 
     }
-    else
-    {
 
-      $info=$result[2];			//echo $result;
-      var_dump($info);
-      print("<br>");
-    }
   }
 
   ?>
@@ -58,13 +60,19 @@ isset($_POST["password"])){
     </div>
   </header>
 
+<<<<<<< HEAD
   <!-- Body -->
   <section id="three" class="wrapper">
+=======
+  <section id="three" class="wrapper">
+
+>>>>>>> 61591fb8fad569f7fa972f57965f67f7290161e5
     <div class="inner">
       <header class="align-center">
         <h2>Login</h2>
         <p>Immettere qui le credenziali</p>
       </header>
+<<<<<<< HEAD
       <hr class="major"/>
       <!-- form -->
       <form action="index.html" method="post" align="center">
@@ -78,6 +86,17 @@ isset($_POST["password"])){
         </div>
         <input class="button" type="submit" name="Submit" value="LOGIN">
       </form>
+=======
+<div class="align-center">
+
+</div>
+  <form class="login" action="login.php" method="post">
+    <div class="6u 12u$(xsmall)">
+      <input type="text" name="user" id="user" value="" placeholder="User" />
+    </div>
+    <div class="6u$ 12u$(xsmall)">
+      <input type="password" name="password" id="password" value="" placeholder="Password" />
+>>>>>>> 61591fb8fad569f7fa972f57965f67f7290161e5
     </div>
 
   </section>
