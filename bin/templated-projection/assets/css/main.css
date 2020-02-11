@@ -1983,6 +1983,9 @@
 		outline: 0;
 		padding: 0 1em;
 		text-decoration: none;
+		width: 100%;
+	}
+	#textLogin{
 		width: 50%;
 	}
 	select{
