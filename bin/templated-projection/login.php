@@ -1,38 +1,11 @@
 <?php
+session_start();
+if (isset($_SESSION["user-type"])) {
+  session_destroy();
+  header("Location: index.php");
+}
 
-if (isset($_POST["user"]) &&
-isset($_POST["password"])){
-
-  $password = $_REQUEST["password"];
-  $utente= $_REQUEST["user"];
-  // chiamo il webservice
-  $url = "https://web.spaggiari.eu/services/ws/wsExtAuth.php?wsdl";
-  $client = new SoapClient( $url );
-  $result = $client->__soapCall("wsExtAuth..ckAuth",    array(
-    'cid' =>"VRIT0007",
-    'login' =>$utente,
-    'password' => $password));
-
-    echo "<pre>";
-    var_dump($result[2]);
-    echo "</pre>";
-
-    if (empty($result[0]) && empty($result[1])) {
-      session_start();
-      $result = (array) $result[2];
-      $_SESSION["user-type"] = $result["account_type"];
-
-    }else {
-
-      echo '<script type="text/javascript">';
-echo ' alert("DATI ERRATI")';  //not showing an alert box.
-echo '</script>';
-
-    }
-
-  }
-
-  ?>
+ ?>
   <!DOCTYPE HTML>
   <!--
   Projection by TEMPLATED
@@ -60,13 +33,17 @@ echo '</script>';
     </div>
   </header>
 
+<<<<<<< HEAD
   <!-- Body -->
+=======
+>>>>>>> 7737653c76f19f304d4a30cd452c38d41ebe6029
   <section id="three" class="wrapper">
     <div class="inner">
       <header class="align-center">
         <h2>Login</h2>
         <p>Immettere qui le credenziali</p>
       </header>
+<<<<<<< HEAD
       <hr class="major"/>
       <!-- form -->
       <form action="login.php" method="post" align="center">
@@ -77,8 +54,25 @@ echo '</script>';
         <div align="center" class="12u 12u$">
           <h3>Inserire la <strong>password</strong> di Spaggiari</h3>
           <input id="textLogin" type="password" name="password" placeholder="Password" />
+=======
+
+      <hr class="major"/>
+      <!-- form -->
+      <form action="sessionInit.php" method="post" align="center">
+        <div align="center" class="12u 12u$">
+          <h3>Inserire l'indirizzo <strong>Email</strong> di Spaggiari</h3>
+          <input type="text" name="user" id="user" value="" placeholder="Utente" />
+        </div>
+        <div align="center" class="12u 12u$">
+          <h3>Inserire la <strong>password</strong> di Spaggiari</h3>
+          <input type="password" name="password" id="password" value="" placeholder="password" />
+>>>>>>> 7737653c76f19f304d4a30cd452c38d41ebe6029
         </div>
       </form>
+<<<<<<< HEAD
+=======
+    </div>
+>>>>>>> 7737653c76f19f304d4a30cd452c38d41ebe6029
 
   </section>
   <!-- Footer -->
