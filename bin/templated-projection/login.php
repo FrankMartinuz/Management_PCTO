@@ -11,12 +11,9 @@ isset($_POST["password"])){
     'cid' =>"VRIT0007",
     'login' =>$utente,
     'password' => $password));
-
-
     /*il webservice restituisce 3 array, il primo [0] contiene eventuali errori,
     il secondo [1] la descrizione degli errori ed
     infine il terzo [2] se i primi due sono vuoti conterrà le informazioni dell'account (dati di esempio):
-
     */
     if(!empty($result[0])){
       //no login - restituito codice errore (il dettaglio dell'errore è nel secondo array $result[1] ma noi lo ignoriamo per un più generico messaggio predefinito di joomla)
@@ -76,12 +73,15 @@ isset($_POST["password"])){
 <div class="align-center">
 
 </div>
+  <form class="login" action="index.html" method="post">
     <div class="6u 12u$(xsmall)">
-      <input type="text" name="user" id="user" value="" placeholder="Utente" />
+      <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
     </div>
     <div class="6u$ 12u$(xsmall)">
-      <input type="email" name="password" id="password" value="" placeholder="Password" />
+      <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
     </div>
+    <input class="button" type="submit" name="Submit" value="LOGIN">
+  </form>
   </div>
 </div>
 
