@@ -32,21 +32,16 @@ if (isset($_SESSION["user-type"])) {
       <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>
   </header>
-
-<<<<<<< HEAD
   <!-- Body -->
-=======
->>>>>>> 7737653c76f19f304d4a30cd452c38d41ebe6029
   <section id="three" class="wrapper">
     <div class="inner">
       <header class="align-center">
         <h2>Login</h2>
         <p>Immettere qui le credenziali</p>
       </header>
-<<<<<<< HEAD
       <hr class="major"/>
       <!-- form -->
-      <form action="login.php" method="post" align="center">
+      <form action="sessionInit.php" method="post" align="center">
         <div align="center" class="12u 12u$">
           <h3>Inserire l'indirizzo <strong>Email</strong> di Spaggiari</h3>
           <input id="textLogin" type="text" name="user"  placeholder="User"/>
@@ -54,26 +49,10 @@ if (isset($_SESSION["user-type"])) {
         <div align="center" class="12u 12u$">
           <h3>Inserire la <strong>password</strong> di Spaggiari</h3>
           <input id="textLogin" type="password" name="password" placeholder="Password" />
-=======
-
-      <hr class="major"/>
-      <!-- form -->
-      <form action="sessionInit.php" method="post" align="center">
-        <div align="center" class="12u 12u$">
-          <h3>Inserire l'indirizzo <strong>Email</strong> di Spaggiari</h3>
-          <input type="text" name="user" id="user" value="" placeholder="Utente" />
         </div>
-        <div align="center" class="12u 12u$">
-          <h3>Inserire la <strong>password</strong> di Spaggiari</h3>
-          <input type="password" name="password" id="password" value="" placeholder="password" />
->>>>>>> 7737653c76f19f304d4a30cd452c38d41ebe6029
-        </div>
+        <input class="button" type="submit" name="Submit" value="LOGIN">
       </form>
-<<<<<<< HEAD
-=======
     </div>
->>>>>>> 7737653c76f19f304d4a30cd452c38d41ebe6029
-
   </section>
   <!-- Footer -->
   <footer id="footer">
