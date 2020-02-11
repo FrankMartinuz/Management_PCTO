@@ -82,7 +82,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   <div class="inner">
     <a href="index.html" class="logo"><strong>Management PCTO</strong></a>
     <nav id="nav">
-      <a href="index.html">Home</a>
+      <a href="index.php">Home</a>
       <a href="generic.html">Generic</a>
       <a href="elements.html">Elements</a>
     </nav>

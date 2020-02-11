@@ -1,25 +1,3 @@
-<?php
-
-  session_start();
-
-  if (empty($_POST)) {
-    header("Location: login.php");
-    exit;
-  } else {
-
-    if ($_POST["username"] == "Admin" and $_POST["password"] == "Admin") {
-      $_SESSION["user"] = $_POST["username"];
-    }else {
-      header("Location: login.html");
-      exit;
-    }
-
-  }
-
-  header("Location: index.php");
-  exit;
- ?>
-
  <?php
 
  if (isset($_POST["user"]) &&
@@ -35,20 +13,16 @@
      'login' =>$utente,
      'password' => $password));
 
-     echo "<pre>";
-     var_dump($result[2]);
-     echo "</pre>";
-
      if (empty($result[0]) && empty($result[1])) {
        session_start();
        $result = (array) $result[2];
        $_SESSION["user-type"] = $result["account_type"];
 
+       header("Location: index.php");
+
      }else {
 
-       echo '<script type="text/javascript">';
- echo ' alert("DATI ERRATI")';  //not showing an alert box.
- echo '</script>';
+       header("Location: login.html");
 
      }
 

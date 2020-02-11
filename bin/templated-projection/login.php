@@ -1,4 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["user-type"])) {
+  session_destroy();
+  header("Location: index.php");
+}
 
+ ?>
   <!DOCTYPE HTML>
   <!--
   Projection by TEMPLATED
@@ -26,43 +33,26 @@
     </div>
   </header>
 
-<<<<<<< HEAD
-  <!-- Body -->
   <section id="three" class="wrapper">
-=======
-  <section id="three" class="wrapper">
-
->>>>>>> 61591fb8fad569f7fa972f57965f67f7290161e5
     <div class="inner">
       <header class="align-center">
         <h2>Login</h2>
         <p>Immettere qui le credenziali</p>
       </header>
-<<<<<<< HEAD
+
       <hr class="major"/>
       <!-- form -->
-      <form action="index.html" method="post" align="center">
+      <form action="sessionInit.php" method="post" align="center">
         <div align="center" class="12u 12u$">
           <h3>Inserire l'indirizzo <strong>Email</strong> di Spaggiari</h3>
-          <input type="email" name="demo-name" id="demo-name" value="" placeholder="email" />
+          <input type="text" name="user" id="user" value="" placeholder="Utente" />
         </div>
         <div align="center" class="12u 12u$">
           <h3>Inserire la <strong>password</strong> di Spaggiari</h3>
-          <input type="password" name="demo-email" id="demo-email" value="" placeholder="password" />
+          <input type="password" name="password" id="password" value="" placeholder="password" />
         </div>
         <input class="button" type="submit" name="Submit" value="LOGIN">
       </form>
-=======
-<div class="align-center">
-
-</div>
-  <form class="login" action="login.php" method="post">
-    <div class="6u 12u$(xsmall)">
-      <input type="text" name="user" id="user" value="" placeholder="User" />
-    </div>
-    <div class="6u$ 12u$(xsmall)">
-      <input type="password" name="password" id="password" value="" placeholder="Password" />
->>>>>>> 61591fb8fad569f7fa972f57965f67f7290161e5
     </div>
 
   </section>

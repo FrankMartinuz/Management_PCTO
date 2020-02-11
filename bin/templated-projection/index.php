@@ -19,7 +19,15 @@
 					<a href="index.html" class="logo"><strong>Management PCTO</strong></a>
 					<nav id="nav">
 						<a href="index.html">Home</a>
-						<a href="login.html">Login</a>
+						<?php
+							session_start();
+							if (isset($_SESSION["user-type"])) {
+								echo "<a href=\"login.php\">Logout</a>";
+							}else {
+								echo "<a href=\"login.php\">Login</a>";
+							}
+
+						 ?>
 						<a href="elements.html">Elements</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
