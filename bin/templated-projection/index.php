@@ -16,9 +16,11 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="logo"><strong>Management PCTO</strong></a>
+
+					<a href="#" class = "logo"><img src="images/logo1.png" width="200" height="75"></a>
+					<!-- <a href="index.php"><strong>Management PCTO</strong></a> -->
 					<nav id="nav">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 						<?php
 							session_start();
 							if (isset($_SESSION["user-type"])) {

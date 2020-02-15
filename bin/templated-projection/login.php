@@ -23,9 +23,9 @@ if (isset($_SESSION["user-type"])) {
   <!-- Header -->
   <header id="header">
     <div class="inner">
-      <a href="index.html" class="logo"><strong>Managemnt PCTO</strong></a>
+      <a href="index.php" class="logo"><strong>Management PCTO</strong></a>
       <nav id="nav">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
         <a href="generic.html">Generic</a>
         <a href="elements.html">Elements</a>
       </nav>
@@ -43,13 +43,14 @@ if (isset($_SESSION["user-type"])) {
       <!-- form -->
       <form action="sessionInit.php" method="post" align="center">
         <div align="center" class="12u 12u$">
-          <h3>Inserire l'indirizzo <strong>Email</strong> di Spaggiari</h3>
+          <h3>Inserire <strong>utente</strong> o <strong>Email</strong> di Spaggiari</h3>
           <input id="textLogin" type="text" name="user"  placeholder="User"/>
-        </div>
+        </div><br>
         <div align="center" class="12u 12u$">
           <h3>Inserire la <strong>password</strong> di Spaggiari</h3>
           <input id="textLogin" type="password" name="password" placeholder="Password" />
         </div>
+        <br><br>
         <input class="button" type="submit" name="Submit" value="LOGIN">
       </form>
     </div>
