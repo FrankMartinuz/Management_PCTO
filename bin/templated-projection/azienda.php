@@ -30,24 +30,12 @@
 			<section id="three" class="wrapper">
 				<div class="inner">
 					<header class="align-center">
-						<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDxTFRgq0uC3CFsqvUHHnTa4KEn1BxE6r0"></script>
-						<script type="text/javascript">
-							var geoCode = new google.maps.Geocoder();
-							geoCode.geocode({'address': "via monte tesoro 55"}, function (result, status){
-								if (error == google.maps.GeocoderStatus.OK){
-									console.log("OK!");
-									var options = {center:result[0].geomtry.location};
-									var map = new google.maps.Map(document.getgetElementById("map"), options);
-								}
-							});
-						</script>
 						<?php
 						include "code/connect.php";
 						$query = createQuery();
 						$stmt = $con->prepare( $query );
 						$stmt->execute();
 						$nRighe = $stmt->rowCount();
-
 						if ($nRighe = 1){
 							$riga = $stmt->fetch(PDO::FETCH_NUM);
 						}else{
@@ -74,7 +62,15 @@
 							</div>
 							<div name="località" class="4u 12u">
 								<h3>Dove trovarci</h3>
-								<div id="map"></div>
+								<div>
+									<iframe id="map" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+									<script type="text/javascript">
+										document.getElementById("map").src = ("https://maps.google.com/maps?q=" + <?php
+											$riga[5] = str_replace(" ", "+", $riga[5]);
+											echo "\"".$riga[5]."\"";
+										 ?>);
+									</script>
+								</div>
 							</div>
 						</div>
 					</header>
@@ -100,8 +96,6 @@
 				$IDazienda = $_COOKIE["IDazienda"];
 			  $query = "SELECT ".$q_attr." FROM Aziende WHERE ID=".$IDazienda;
 			  return $query;
-			}
-			?>
-
+			}?>
 	</body>
 </html>
