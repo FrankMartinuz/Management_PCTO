@@ -24,7 +24,7 @@
 						<?php
 							session_start();
 							if (isset($_SESSION["user-type"])) {
-								echo "<a href=\"login.php\">Logout</a>";
+								echo "<a href=\"logout.php\">Logout</a>";
 							}else {
 								echo "<a href=\"login.php\">Login</a>";
 							}
@@ -86,29 +86,50 @@
 
 		<!-- Footer -->
 			<footer id="footer">
-				<!--
+
 				<div class="inner">
 
-					<h3>Get in touch</h3>
+					<h3>Contatta direttamente Valenza</h3>
 
-					<form action="#" method="post">
+					<form action="code/mail.php" method="post">
 
 						<div class="field half first">
-							<label for="name">Name</label>
-							<input name="name" id="name" type="text" placeholder="Name">
+							<label for="name">Nome</label>
+							<input name="name" id="name" type="text" placeholder="Name"
+							value="<?php if (isset($_SESSION["user-name"])) {echo $_SESSION["user-name"] . " " . $_SESSION["user-surname"] . "\"";}?>"
+							readonly = "readonly"
+							>
 						</div>
 						<div class="field half">
+							<label for="classe">Classe</label>
+							<input name="classe" id="classe" type="text" placeholder="Classe"
+							value="<?php if (isset($_SESSION["user-class"])) {echo $_SESSION["user-class"];}?>"
+
+							>
+						</div>
+						<div class="field">
 							<label for="email">Email</label>
 							<input name="email" id="email" type="email" placeholder="Email">
 						</div>
 						<div class="field">
-							<label for="message">Message</label>
+							<label for="message">Messaggio</label>
 							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
+						<?php
+							if (!isset($_SESSION["user-name"])) {
+							echo "<h4 align = \"center\">Per usare questa funzione effettua il <a href=\"login.php\">login</a></h4>";
+							}
+						?>
+
 						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
+							<li><input value="Invia messaggio" class="button alt" type="submit"
+								<?php
+								if (!isset($_SESSION["user-name"])) {
+									echo "disabled";
+								}
+								 ?>></li>
 						</ul>
-					</form>-->
+					</form>
 
 					<div class="copyright">
 						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
