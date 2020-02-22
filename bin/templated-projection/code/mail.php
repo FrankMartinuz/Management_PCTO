@@ -15,6 +15,7 @@ $body = date("d-m-Y") . "\n\n" . $message;
 $body = $body . "\n\nPuò contattarmi a questa mail: $email";
 $body = $body . "\n\n$name  $class";
 
-
+mail("francescomartino498@gmail.com", $subject, $body, "From: $email");
+header("Location: index.php");
 
  ?>
