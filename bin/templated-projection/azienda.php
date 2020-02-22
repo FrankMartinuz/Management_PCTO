@@ -18,7 +18,7 @@
 				<div class="inner">
 					<a href="index.html" class="logo"><strong>Management PCTO</strong></a>
 					<nav id="nav">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 						<a href="generic.html">Generic</a>
 						<a href="elements.html">Elements</a>
 					</nav>
@@ -26,7 +26,7 @@
 				</div>
 			</header>
 
-		<!-- Body -->
+		<!-- header -->
 			<section id="three" class="wrapper">
 				<div class="inner">
 					<header class="align-center">
@@ -45,35 +45,38 @@
 						echo("<p>".$riga[1]."</p>")
 						?>
 						<hr class="major"/>
+						</header>
+						<!-- body -->
 						<div class="row uniform">
-							<div name="contatti" class="4u 12u">
-								<h3><strong>Contatti</strong></h3>
-								<h4 align="left"><strong>Numero di telefono: </strong><?php echo($riga[7]) ?></h4>
-								<h4 align="left"><strong>Email: </strong><?php echo($riga[8]) ?></h4>
-								<h4 align="left"><strong>Sito web: </strong><?php echo($riga[9]) ?></h4>
+							<div name="contatti" class="4u 12u$(small)">
+								<h3 align="center"><strong>Contatti</strong></h3>
+								<h4><strong>Numero di telefono: </font></strong><?php echo($riga[7]) ?></h4>
+								<h4><strong>Email: </strong><?php echo($riga[8]) ?></h4>
+								<h4><strong>Sito web: </strong><?php echo($riga[9]) ?></h4>
 							</div>
-							<div name="informazioni"class="4u 12u">
-								<h3><strong>Informazioni</strong></h3>
+
+							<div name="informazioni"class="4u 12u$(small)">
+								<h3 align="center"><strong>Informazioni</strong></h3>
 								<h4><strong>Numero di dipendenti: </strong><?php echo($riga[10]) ?></h4>
 								<h4><strong>Data convenzione: </strong><?php echo($riga[11]) ?></h4>
 								<h4><strong>Settore: </strong><?php echo($riga[12]) ?></h4>
 								<h4><strong>Codice ATECO: </strong><?php echo($riga[13]) ?></h4>
 								<h4><strong>Descrizione: </strong><?php echo($riga[14]) ?></h4>
 							</div>
-							<div name="località" class="4u 12u">
-								<h3>Dove trovarci</h3>
-								<div>
-									<iframe id="map" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+							<div name="località" class="4u 12u$(small)">
+								<h3 align="center"><strong>Dove trovarci</strong></h3>
+									<iframe id="map" align="center" class="12u 12u$(small)" height="300" frameborder="0" style="border:0;"></iframe>
 									<script type="text/javascript">
 										document.getElementById("map").src = ("https://maps.google.com/maps?q=" + <?php
-											$riga[5] = str_replace(" ", "+", $riga[5]);
-											echo "\"".$riga[5]."\"";
+										echo "\"".str_replace(" ", "+", $riga[5])."\"";
 										 ?>);
 									</script>
-								</div>
+									<h4><strong>Indirizzo: </strong><?php echo($riga[5]) ?></h4>
+									<h4><strong>Comune: </strong><?php echo($riga[3]) ?></h4>
+									<h4><strong>CAP: </strong><?php echo($riga[6]) ?></h4>
 							</div>
 						</div>
-					</header>
 			</section>
 
 		<!-- Footer -->
