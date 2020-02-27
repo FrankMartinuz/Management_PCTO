@@ -22,11 +22,11 @@
        $_SESSION["user-surname"] = $result["cognome"];
        $_SESSION["user-class"] = substr($result["classe_desc"], 0, 3);
 
-       header("Location: index.php");
+       header("Location: ../index.php");
 
      }else {
 
-       header("Location: login.php");
+       header("Location: ../login.php");
 
      }
 

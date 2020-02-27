@@ -41,7 +41,7 @@ if (isset($_SESSION["user-type"])) {
       </header>
       <hr class="major"/>
       <!-- form -->
-      <form action="sessionInit.php" method="post" align="center">
+      <form action="code/sessionInit.php" method="post" align="center">
         <div align="center" class="12u 12u$">
           <h3>Inserire <strong>utente</strong> o <strong>Email</strong> di Spaggiari</h3>
           <input id="textLogin" type="text" name="user"  placeholder="User"/>

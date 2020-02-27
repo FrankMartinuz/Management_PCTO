@@ -6,7 +6,6 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 -->
 
 <html>
-
 <head>
   <title>Risultati ricerca</title>
   <meta charset="utf-8" />
@@ -80,7 +79,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <!-- Header -->
 <header id="header">
   <div class="inner">
-    <a href="index.html" class="logo"><strong>Management PCTO</strong></a>
+    <a href="index.php" class="logo"><strong>Management PCTO</strong></a>
     <nav id="nav">
       <a href="index.php">Home</a>
       <a href="generic.html">Generic</a>

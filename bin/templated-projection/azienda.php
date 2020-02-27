@@ -16,7 +16,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="logo"><strong>Management PCTO</strong></a>
+					<a href="index.php" class="logo"><strong>Management PCTO</strong></a>
 					<nav id="nav">
 						<a href="index.php">Home</a>
 						<a href="generic.html">Generic</a>

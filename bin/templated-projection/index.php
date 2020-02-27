@@ -17,18 +17,17 @@
 			<header id="header">
 				<div class="inner">
 
-					<a href="#" class="logo"><img src="images/logo1.png" align="left" class="1u 12u$(xsmall)"	></a>
+					<a href="#" class="logo"><img src="images/logo1.png" align="left" width="150" height="80"></a>
 					<!-- <a href="index.php"><strong>Management PCTO</strong></a> -->
 					<nav id="nav">
 						<a href="index.php">Home</a>
 						<?php
 							session_start();
 							if (isset($_SESSION["user-type"])) {
-								echo "<a href=\"logout.php\">Logout</a>";
+								echo "<a href=\"code\logout.php\">Logout</a>";
 							}else {
 								echo "<a href=\"login.php\">Login</a>";
 							}
-
 						 ?>
 						<a href="elements.html">Elements</a>
 					</nav>
