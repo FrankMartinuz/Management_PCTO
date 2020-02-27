@@ -14,9 +14,13 @@
      'password' => $password));
 
      if (empty($result[0]) && empty($result[1])) {
+       var_dump($result[2]);
        session_start();
        $result = (array) $result[2];
        $_SESSION["user-type"] = $result["account_type"];
+       $_SESSION["user-name"] = $result["nome"];
+       $_SESSION["user-surname"] = $result["cognome"];
+       $_SESSION["user-class"] = substr($result["classe_desc"], 0, 3);
 
        header("Location: index.php");
 
