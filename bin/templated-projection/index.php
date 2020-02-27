@@ -17,7 +17,7 @@
 			<header id="header">
 				<div class="inner">
 
-					<a href="#" class = "logo"><img src="images/logo1.png" width="200" height="75"></a>
+					<a href="#" class="logo"><img src="images/logo1.png" align="left" class="1u 12u$(xsmall)"	></a>
 					<!-- <a href="index.php"><strong>Management PCTO</strong></a> -->
 					<nav id="nav">
 						<a href="index.php">Home</a>

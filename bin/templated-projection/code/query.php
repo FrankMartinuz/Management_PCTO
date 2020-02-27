@@ -12,7 +12,6 @@ function createQuery(){
   Comune LIKE \"%".$comune."%\" AND
   Indirizzo LIKE \"%".$indirizzo."%\" AND
   Settore LIKE \"%".$settore."%\"";
-  // $query = "SELECT ".$q_attr." FROM Aziende HAVING ".$field." LIKE \"%".$equals_to."%\"";
 
   return $query;
 }
@@ -27,13 +26,11 @@ function headerTabella($header){
   echo "</thead>";
 }
 
-include "connect.php";
-
 // Main
 
+include "connect.php";
 $q_attr = "ID,Ragione_sociale,Comune,Indirizzo,Settore";
 $query = createQuery();
-
 $stmt = $con->prepare( $query );
 $stmt->execute();
 $nRighe = $stmt->rowCount();
