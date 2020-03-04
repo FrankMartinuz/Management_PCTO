@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE HTML>
 <!--
 	Projection by TEMPLATED
@@ -42,7 +43,7 @@
 							echo "Errore durante la query";
 						}
 						echo("<h2>".$riga[2]."</h2>");
-						echo("<p>".$riga[1]."</p>")
+						echo("<p>".$riga[1]."</p>");
 						?>
 						<hr class="major"/>
 						</header>
@@ -50,18 +51,24 @@
 						<div class="row uniform">
 							<div name="contatti" class="4u 12u$(small)">
 								<h3 align="center"><strong>Contatti</strong></h3>
-								<h4><strong>Numero di telefono: </font></strong><?php echo($riga[7]) ?></h4>
-								<h4><strong>Email: </strong><?php echo($riga[8]) ?></h4>
 								<h4><strong>Sito web: </strong><?php echo($riga[9]) ?></h4>
+								<?php if (isset($_SESSION["user-type"])){
+												if ($_SESSION["user-type"] != "S"){
+													echo "<h4><strong>Numero di telefono: </font></strong>".$riga[7]."</h4>";
+													echo "<h4><strong>Email: </strong>".$riga[8]."</h4>";
+												}}?>
 							</div>
 
 							<div name="informazioni"class="4u 12u$(small)">
 								<h3 align="center"><strong>Informazioni</strong></h3>
 								<h4><strong>Numero di dipendenti: </strong><?php echo($riga[10]) ?></h4>
-								<h4><strong>Data convenzione: </strong><?php echo($riga[11]) ?></h4>
 								<h4><strong>Settore: </strong><?php echo($riga[12]) ?></h4>
-								<h4><strong>Codice ATECO: </strong><?php echo($riga[13]) ?></h4>
 								<h4><strong>Descrizione: </strong><?php echo($riga[14]) ?></h4>
+								<?php if (isset($_SESSION["user-type"])){
+												if ($_SESSION["user-type"] != "S"){
+													echo "<h4><strong>Data convenzione: </strong>".$riga[11]."</h4>";
+													echo "<h4><strong>Codice ATECO: </strong>".$riga[13]."</h4>";
+												}}?>
 							</div>
 
 							<div name="località" class="4u 12u$(small)">
