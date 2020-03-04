@@ -13,67 +13,18 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="subpage">
-  <script type="text/javascript">
-    firstLoad();
-    var lastInput = 0;
-    function sendQuery(event) {
-      let nome = document.getElementById("ragione_sociale").value;
-      let comune = document.getElementById("comune").value;
-      let indirizzo = document.getElementById("indirizzo").value;
-      let settore = document.getElementById("settore").value;
-
-      switch(event.target.id) {
-        case "ragione_sociale":
-          nome += event.key;
-        break;
-        case "comune":
-          comune += event.key;
-        break;
-        case "indirizzo":
-          indirizzo += event.key;
-          break;
-        case "settore":
-          settore += event.key;
-          break;
-        default:
-          break;
-      }
-      let req = new XMLHttpRequest();
-      let currentInput = Math.random();
-      req.onreadystatechange = function() {
-        if (lastInput == currentInput) {
-          document.getElementById("resultTable").innerHTML = req.response;
-        }
-      }
-      let sendData = new FormData();
-      sendData.append("ragione_sociale", nome);
-      sendData.append("comune", comune);
-      sendData.append("indirizzo", indirizzo);
-      sendData.append("settore", settore);
-      req.open('POST', './code/query.php', true);
-      //let currentInput = Math.random();
-      lastInput = currentInput;
-      req.send(sendData);
-    }
-
-    function firstLoad(){
-      var req = new XMLHttpRequest();
-      var sendData = new FormData();
-      sendData.append("ragione_sociale", "");
-      sendData.append("comune", "");
-      sendData.append("indirizzo", "");
-      sendData.append("settore", "");
-      req.open('POST', './code/query.php', true);
-      req.send(sendData);
-      req.onreadystatechange = function() {
-        document.getElementById("resultTable").innerHTML = req.response;
-      }
-    }
-
-    function newPage(ID){
-      document.cookie = ("IDazienda=" + ID);
-      location.href= "azienda.php";
-    }
+  <!-- CODE -->
+<?php
+  include "code/connect.php";
+  $query = "SELECT ID,Ragione_sociale,Comune,Indirizzo,Settore FROM Aziende";
+  $stmt = $con->prepare($query);
+  $stmt->execute();
+?>
+<script type="text/javascript">
+  function newPage(ID){
+    document.cookie = ("IDazienda=" + ID);
+    location.href= "azienda.php";
+  }
 </script>
 
 <!-- Header -->
