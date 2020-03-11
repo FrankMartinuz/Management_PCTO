@@ -14,17 +14,36 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </head>
 <body class="subpage">
   <!-- CODE -->
-<?php
-  include "code/connect.php";
-  $query = "SELECT ID,Ragione_sociale,Comune,Indirizzo,Settore FROM Aziende";
-  $stmt = $con->prepare($query);
-  $stmt->execute();
-?>
+<script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function (){
+  $.ajax({
+    url: "code/query.php",
+    type: "get",
+    dataType: "json",
+    success: function(response){
+      var len = response.length
+      console.log(len)
+      var table = ""
+      for (var i=0; i <= len; i++){
+        table += "<tr>\n"
+        table += "<td>" + response[i].id + "</td>\n"
+        table += "<td>" + response[i].Ragione_sociale + "</td>\n"
+        table += "<td>" + response[i].Comune + "</td>\n"
+        table += "<td>" + response[i].Settore + "</td>\n"
+        table += "</tr>\n"
+      }
+      console.log(table)
+      $("resultTable").append(table)
+    }
+  })
+})
+
   function newPage(ID){
     document.cookie = ("IDazienda=" + ID);
     location.href= "azienda.php";
   }
+
 </script>
 
 <!-- Header -->

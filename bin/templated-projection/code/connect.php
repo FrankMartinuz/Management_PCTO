@@ -1,11 +1,10 @@
 <?php
-  $host = "remotemysql.com";
-  $db_name = "V1h7DQxhnB";
-  $username = "V1h7DQxhnB";
-  $password = "k36A91EtFI";
-  $con = new PDO("mysql:host=$host;dbname=$db_name",$username, $password);
+  $host = "localhost";
+  $db_name = "test";
+  $username = "root";
+  $password = "";
   try {
-    $con = new PDO("mysql:host=$host;dbname=$db_name",$username, $password);
+      $con = mysqli_connect($host,$username,$password,$db_name);
   } catch (PDOException $exception) {
     echo "<script>console.log(".$exception->getMessage().");</script>";
   }
