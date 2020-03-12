@@ -17,6 +17,13 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 
+//Variabili
+//Variabili per la ricerca
+var ragione_sociale = ""
+var comune = ""
+var indirizzo = ""
+var settore = ""
+
 //FristLoad
 $(document).ready(function (){
   $.ajax({
@@ -35,28 +42,47 @@ $(document).ready(function (){
         table += "<td>" + response[i].Settore + "</td>\n"
         table += "</tr>\n"
       }
-      console.log(table)
       $("#resultTable").append(table)
     }
   })
 })
 
-function ricerca(event){
-  console.log(event)
-  switch (event.target.id) {
-    case "ragione_sociale":
-      console.log("ciao")
-      //ricerca =  ""
-      break;
-    default:
 
+function inputRicerca(event){
+  if (event.key != "Enter"){
+    switch (event.target.id) {
+      case "ragione_sociale":
+        ragione_sociale = document.getElementById("ragione_sociale").value + event.key
+        console.log(ragione_sociale)
+        break;
+      default:
+  }
   }
 }
 
-  function newPage(ID){
-    document.cookie = ("IDazienda=" + ID);
-    location.href= "azienda.php";
+addEventListener('keydown', function(event){
+  if (event.key == "Backspace"){
+    switch (event.target.id) {
+      case "ragione_sociale":
+        ragione_sociale = levaultimo(ragione_sociale)
+        console.log(ragione_sociale)
+        break;
+      default:
+
+    }
   }
+})
+
+function levaultimo(str){
+        len = str.length;
+        str = str.substring(0,len-1);
+        return str;
+}
+
+function newPage(ID){
+  document.cookie = ("IDazienda=" + ID);
+  location.href= "azienda.php";
+}
 
 </script>
 
@@ -87,7 +113,7 @@ function ricerca(event){
     <div class="row uniform">
       <div class="3u 12u$(small)" align="center">
         <h2>Nome</h2>
-        <input type="text" id="ragione_sociale" onkeypress="ricerca(event)" placeholder="Nome"/>
+        <input type="text" id="ragione_sociale" onkeypress="inputRicerca(event)" placeholder="Nome"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Comune</h2>
