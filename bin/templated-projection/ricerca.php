@@ -23,18 +23,16 @@ $(document).ready(function (){
     dataType: "json",
     success: function(response){
       var len = response.length
-      console.log(len)
-      var table = ""
-      for (var i=0; i <= len; i++){
-        table += "<tr>\n"
-        table += "<td>" + response[i].id + "</td>\n"
+      var table = "<thead><tr><td><strong>ID</strong></td><td><strong>Nome</strong></td><td><strong>Comune</strong></td><td><strong>Settore</strong></td></tr></thead>"
+      for (var i=0; i < len; i++){
+        table += "<tr onclick=\"newPage(" + response[i].ID + ")\">\n"
+        table += "<td>" + response[i].ID + "</td>\n"
         table += "<td>" + response[i].Ragione_sociale + "</td>\n"
         table += "<td>" + response[i].Comune + "</td>\n"
         table += "<td>" + response[i].Settore + "</td>\n"
         table += "</tr>\n"
       }
-      console.log(table)
-      $("resultTable").append(table)
+      $("#resultTable").append(table)
     }
   })
 })

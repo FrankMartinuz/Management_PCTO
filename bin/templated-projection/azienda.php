@@ -34,11 +34,9 @@
 						<?php
 						include "code/connect.php";
 						$query = createQuery();
-						$stmt = $con->prepare( $query );
-						$stmt->execute();
-						$nRighe = $stmt->rowCount();
+						$stmt = mysqli_query($con,$query);
 						if ($nRighe = 1){
-							$riga = $stmt->fetch(PDO::FETCH_NUM);
+							$riga = mysqli_fetch_array($stmt);
 						}else{
 							echo "Errore durante la query";
 						}
@@ -102,9 +100,8 @@
 			<?php
 			//Funzioni
 			function createQuery(){
-			  $q_attr = "*";
 				$IDazienda = $_COOKIE["IDazienda"];
-			  $query = "SELECT ".$q_attr." FROM Aziende WHERE ID=".$IDazienda;
+			  $query = "SELECT * FROM Aziende WHERE ID=".$IDazienda;
 			  return $query;
 			}?>
 	</body>
