@@ -16,6 +16,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   <!-- CODE -->
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript">
+
+//FristLoad
 $(document).ready(function (){
   $.ajax({
     url: "code/query.php",
@@ -23,19 +25,33 @@ $(document).ready(function (){
     dataType: "json",
     success: function(response){
       var len = response.length
-      var table = "<thead><tr><td><strong>ID</strong></td><td><strong>Nome</strong></td><td><strong>Comune</strong></td><td><strong>Settore</strong></td></tr></thead>"
+      var table = "<thead><tr><td><strong>ID</strong></td><td><strong>Nome</strong></td><td><strong>Comune</strong></td><td><strong>Indirizzo</strong></td><td><strong>Settore</strong></td></tr></thead>"
       for (var i=0; i < len; i++){
         table += "<tr onclick=\"newPage(" + response[i].ID + ")\">\n"
         table += "<td>" + response[i].ID + "</td>\n"
         table += "<td>" + response[i].Ragione_sociale + "</td>\n"
         table += "<td>" + response[i].Comune + "</td>\n"
+        table += "<td>" + response[i].Indirizzo + "</td>\n"
         table += "<td>" + response[i].Settore + "</td>\n"
         table += "</tr>\n"
       }
+      console.log(table)
       $("#resultTable").append(table)
     }
   })
 })
+
+function ricerca(event){
+  console.log(event)
+  switch (event.target.id) {
+    case "ragione_sociale":
+      console.log("ciao")
+      //ricerca =  ""
+      break;
+    default:
+
+  }
+}
 
   function newPage(ID){
     document.cookie = ("IDazienda=" + ID);
@@ -67,11 +83,11 @@ $(document).ready(function (){
     <!-- Research field -->
 
   </script>
-  <form method="POST" name="searchField" id = "form" onsubmit="return false;">
+  <form method="POST" name="searchField" id="form" onsubmit="return false;">
     <div class="row uniform">
       <div class="3u 12u$(small)" align="center">
         <h2>Nome</h2>
-        <input type="text" id="ragione_sociale" onkeypress="sendQuery(event)" placeholder="Nome"/>
+        <input type="text" id="ragione_sociale" onkeypress="ricerca(event)" placeholder="Nome"/>
       </div>
       <div class="3u 12u$(small)" align="center">
         <h2>Comune</h2>
