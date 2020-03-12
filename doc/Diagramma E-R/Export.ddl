@@ -17,15 +17,3 @@ CREATE TABLE Aziende
      Descrizione TEXT,
      PRIMARY KEY (ID)
     );
-
-CREATE TABLE Esperienze
-    (
-     ID_Exp INTEGER NOT NULL ,
-     ID_azienda INTEGER NOT NULL ,
-     Classe_studente VARCHAR (4) NOT NULL ,
-     Codice_mansione VARCHAR (8) NOT NULL ,
-     Mansione VARCHAR (128) NOT NULL ,
-     Descrizione_esperienza TEXT,
-     PRIMARY KEY (ID_Exp),
-     FOREIGN KEY (ID_azienda) REFERENCES Aziende(ID)
-    );
