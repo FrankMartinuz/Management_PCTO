@@ -15,9 +15,11 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <body class="subpage">
   <!-- CODE -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="code/jSQL.js"></script>
 <script type="text/javascript">
 
 //Variabili
+var jsonTabella
 //Variabili per la ricerca
 var ragione_sociale = ""
 var comune = ""
@@ -43,10 +45,27 @@ $(document).ready(function (){
         table += "</tr>\n"
       }
       $("#resultTable").append(table)
+      jsonTabella = response
     }
   })
 })
 
+function ricerca(){
+  //for (var i=0; i < jsonTabella.length; i++){
+    //var ricRagione_sociale = String(jsonTabella[i].Ragione_sociale)
+    //console.log(ricRagione_sociale.includes(ragione_sociale))
+    //if (jsonTabella[i].Ragione_sociale.match(ragione_sociale)){
+      //console.log("ciao")
+    //}
+  //}
+  q = jSQL.qry
+  console.log(q)
+  q().from(jsonTabella, "j").select("ID").where("ID like %" + ragione_sociale + "%").toArray()
+}
+
+function retRagione_sociale(str){
+  return str.includes(ragione_sociale) == true
+}
 
 function inputRicerca(event){
   if (event.key != "Enter"){
@@ -54,9 +73,10 @@ function inputRicerca(event){
       case "ragione_sociale":
         ragione_sociale = document.getElementById("ragione_sociale").value + event.key
         console.log(ragione_sociale)
+        ricerca()
         break;
       default:
-  }
+    }
   }
 }
 
@@ -83,7 +103,6 @@ function newPage(ID){
   document.cookie = ("IDazienda=" + ID);
   location.href= "azienda.php";
 }
-
 </script>
 
 <!-- Header -->
