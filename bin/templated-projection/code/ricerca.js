@@ -39,15 +39,19 @@ function addAziendaTable(i){
 }
 
 function printRicerca(aziende){
-  table = "<thead><tr><td><strong>ID</strong></td><td><strong>Nome</strong></td><td><strong>Comune</strong></td><td><strong>Indirizzo</strong></td><td><strong>Settore</strong></td></tr></thead>"
-  for (var i=0; i<aziende.length;i++){
-    var idToFind = aziende[i]
-    for (var j=0; j<lenJson; j++){
-      if (idToFind == jsonTabella[j].ID){
-        table += addAziendaTable(j)
-        break
+  if (aziende.length > 0){
+    table = "<thead><tr><td><strong>ID</strong></td><td><strong>Nome</strong></td><td><strong>Comune</strong></td><td><strong>Indirizzo</strong></td><td><strong>Settore</strong></td></tr></thead>"
+    for (var i=0; i<aziende.length;i++){
+      var idToFind = aziende[i]
+      for (var j=0; j<lenJson; j++){
+        if (idToFind == jsonTabella[j].ID){
+          table += addAziendaTable(j)
+          break
+        }
       }
     }
+  }else{
+    table = "<h3 align=\"center\">Nessun risultato trovato</h3>"
   }
   $("#resultTable").html(table)
 }
@@ -64,20 +68,11 @@ function ricerca(){
   settore = settore.toUpperCase()
 
   for (var i=0; i < lenJson; i++){
-    if (jsonTabella[i].Ragione_sociale.includes(ragione_sociale) && ragione_sociale != ""){
-      find.push(jsonTabella[i].ID)
-    }
-    if (jsonTabella[i].Comune.includes(comune) && comune != ""){
-      find.push(jsonTabella[i].ID)
-      console.log("comune")
-    }
-    if (jsonTabella[i].Indirizzo.includes(indirizzo) && indirizzo != ""){
-      find.push(jsonTabella[i].ID)
-    }
-    if (jsonTabella[i].Settore.includes(settore) && settore != ""){
+    if (jsonTabella[i].Ragione_sociale.includes(ragione_sociale) && jsonTabella[i].Comune.includes(comune) && jsonTabella[i].Indirizzo.includes(indirizzo) && jsonTabella[i].Settore.includes(settore)){
       find.push(jsonTabella[i].ID)
     }
   }
+  console.log(find.length)
   printRicerca(find)
 }
 
@@ -91,7 +86,6 @@ function inputRicerca(event){
       case "comune":
         comune = document.getElementById("comune").value + event.key
         ricerca()
-        console.log("comune")
         break;
       case "indirizzo":
         indirizzo = document.getElementById("indirizzo").value + event.key
@@ -113,6 +107,15 @@ addEventListener('keydown', function(event){
         ragione_sociale = levaultimo(ragione_sociale)
         ricerca()
         break;
+      case "comune":
+        comune = levaultimo(comune)
+        ricerca()
+      case "indirizzo":
+        indirizzo = levaultimo(indirizzo)
+        ricerca()
+      case "settore":
+        settore = levaultimo(settore)
+        ricerca()
       default:
 
     }

@@ -43,7 +43,7 @@
 					</header>
 
 					<div class="flex ">
-						<div onclick="window.location='ricerca.php';">
+						<div onclick="window.location='ricerca.html';">
 							<!-- <span class="icon fa-car"></span> -->
 							<span><img src="images/studente.png" width="100" height="100"></span>
 							<h3>Studente</h3>
