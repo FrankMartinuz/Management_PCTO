@@ -72,7 +72,6 @@ function ricerca(){
       find.push(jsonTabella[i].ID)
     }
   }
-  console.log(find.length)
   printRicerca(find)
 }
 
