@@ -48,7 +48,7 @@
 						<!-- body -->
 						<div class="row uniform">
 							<div name="contatti" class="4u 12u$(small)">
-								<h3 align="center"><strong>Contatti</strong></h3>
+								<h3 align="center"><strong><font color="#6cc091">Contatti</font></strong></h3>
 								<h4><strong>Sito web: </strong><?php echo($riga[9]) ?></h4>
 								<?php if (isset($_SESSION["user-type"])){
 												if ($_SESSION["user-type"] != "S"){
@@ -58,7 +58,7 @@
 							</div>
 
 							<div name="informazioni"class="4u 12u$(small)">
-								<h3 align="center"><strong>Informazioni</strong></h3>
+								<h3 align="center"><strong><font color="#6cc091">Informazioni</font></strong></h3>
 								<h4><strong>Numero di dipendenti: </strong><?php echo($riga[10]) ?></h4>
 								<h4><strong>Settore: </strong><?php echo($riga[12]) ?></h4>
 								<h4><strong>Descrizione: </strong><?php echo($riga[14]) ?></h4>
@@ -70,13 +70,36 @@
 							</div>
 
 							<div name="località" class="4u 12u$(small)">
-								<h3 align="center"><strong>Dove trovarci</strong></h3>
-									<iframe id="map" align="center" class="12u 12u$(small)" height="300" frameborder="0" style="border:0;"></iframe>
+								<h3 align="center"><strong><font color="#6cc091">Dove trovarci</font></strong></h3>
+									<!-- <iframe id="map" align="center" class="12u 12u$(small)" height="300" frameborder="0" style="border:0;"></iframe>-->
+									<script src="assets/js/jquery.min.js"></script>
 									<script type="text/javascript">
-										document.getElementById("map").src = ("https://maps.google.com/maps?q=" + <?php
-										echo "\"".str_replace(" ", "+", $riga[5])."\"";
-										 ?>);
+									//document.getElementById("map").src = ("https://maps.google.com/maps?q=" + <?php
+			//echo "\"".str_replace(" ", "+", $riga[5])."\"";
+			 ?>);
+										 $(document).ready(function (){
+											 $.ajax({
+												 url: "http://photon.komoot.de/api/?q=via+monte+tesoro&limit=1",
+												 type: "get",
+												 dataType: "json",
+												 success: function(response){
+													 var lat = response.features[0].geometry.coordinates[0]
+													 var lon = response.features[0].geometry.coordinates[1]
+													 console.log("lat=" + lat)
+													 console.log("lon=" + lon)
+													 creationMap(lat,lon)
+												 }
+											 })
+										 })
+
+										 function creationMap(lat,lon){
+											 var map = "https://maps.google.com/maps?q=" + lat + "," + lon
+											 console.log(map)
+										 }
 									</script>
+									<div id=map>
+
+									</div>
 									<h4><strong>Indirizzo: </strong><?php echo($riga[5]) ?></h4>
 									<h4><strong>Comune: </strong><?php echo($riga[3]) ?></h4>
 									<h4><strong>CAP: </strong><?php echo($riga[6]) ?></h4>
@@ -93,7 +116,6 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
